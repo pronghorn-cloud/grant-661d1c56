@@ -1,0 +1,2 @@
+import{j as t}from"./index-DDxpmVXJ.js";const r={checkCOR:e=>t.post(`/cor/check/${e}`),sendRequest:(e,o={})=>t.post(`/cor/request/${e}`,o),getStatus:e=>t.get(`/cor/status/${e}`),getPending:(e={})=>t.get("/cor/pending",{params:e}),getAll:(e={})=>t.get("/cor/all",{params:e}),getRequestInfo:e=>t.get(`/cor/respond/${e}`),respond:(e,o)=>t.post(`/cor/respond/${e}`,o)};export{r as c};
+//# sourceMappingURL=corService-Dge5eI5Q.js.map

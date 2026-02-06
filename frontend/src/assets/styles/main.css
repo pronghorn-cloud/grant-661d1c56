@@ -1,0 +1,279 @@
+/* ============================================
+   Alberta Design System - Global Styles
+   Based on @abgov/web-components design tokens
+   ============================================ */
+
+/* Import GoA Web Components base styles */
+@import '@abgov/web-components/index.css';
+
+/* ============================================
+   CSS Reset & Base Styles
+   ============================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  font-family: var(--goa-font-family-sans);
+  font-size: var(--goa-font-size-3);
+  line-height: var(--goa-line-height-3);
+  color: var(--goa-color-text-default);
+  background-color: var(--goa-color-greyscale-white);
+}
+
+/* ============================================
+   Typography
+   ============================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--goa-font-family-sans);
+  font-weight: var(--goa-font-weight-bold);
+  line-height: 1.2;
+  margin-bottom: var(--goa-space-m);
+  color: var(--goa-color-text-default);
+}
+
+h1 {
+  font-size: var(--goa-font-size-7);
+}
+
+h2 {
+  font-size: var(--goa-font-size-6);
+}
+
+h3 {
+  font-size: var(--goa-font-size-5);
+}
+
+h4 {
+  font-size: var(--goa-font-size-4);
+}
+
+h5 {
+  font-size: var(--goa-font-size-3);
+}
+
+h6 {
+  font-size: var(--goa-font-size-2);
+}
+
+p {
+  margin-bottom: var(--goa-space-m);
+  line-height: var(--goa-line-height-3);
+}
+
+a {
+  color: var(--goa-color-interactive-default);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--goa-color-interactive-hover);
+  text-decoration: underline;
+}
+
+a:focus {
+  outline: var(--goa-border-width-m) solid var(--goa-color-interactive-focus);
+  outline-offset: 2px;
+}
+
+/* ============================================
+   Layout Utilities
+   ============================================ */
+
+.container {
+  width: 100%;
+  max-width: var(--goa-space-max-width, 1440px);
+  margin: 0 auto;
+  padding: 0 var(--goa-space-m);
+}
+
+.section {
+  padding: var(--goa-space-xl) 0;
+}
+
+.section-narrow {
+  padding: var(--goa-space-l) 0;
+}
+
+/* ============================================
+   Spacing Utilities
+   ============================================ */
+
+.mt-xs { margin-top: var(--goa-space-xs); }
+.mt-s { margin-top: var(--goa-space-s); }
+.mt-m { margin-top: var(--goa-space-m); }
+.mt-l { margin-top: var(--goa-space-l); }
+.mt-xl { margin-top: var(--goa-space-xl); }
+
+.mb-xs { margin-bottom: var(--goa-space-xs); }
+.mb-s { margin-bottom: var(--goa-space-s); }
+.mb-m { margin-bottom: var(--goa-space-m); }
+.mb-l { margin-bottom: var(--goa-space-l); }
+.mb-xl { margin-bottom: var(--goa-space-xl); }
+
+.p-xs { padding: var(--goa-space-xs); }
+.p-s { padding: var(--goa-space-s); }
+.p-m { padding: var(--goa-space-m); }
+.p-l { padding: var(--goa-space-l); }
+.p-xl { padding: var(--goa-space-xl); }
+
+/* ============================================
+   Grid Utilities
+   ============================================ */
+
+.grid {
+  display: grid;
+  gap: var(--goa-space-m);
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 1024px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   Flex Utilities
+   ============================================ */
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gap-xs { gap: var(--goa-space-xs); }
+.gap-s { gap: var(--goa-space-s); }
+.gap-m { gap: var(--goa-space-m); }
+.gap-l { gap: var(--goa-space-l); }
+.gap-xl { gap: var(--goa-space-xl); }
+
+/* ============================================
+   Accessibility
+   ============================================ */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--goa-color-interactive-default);
+  color: white;
+  padding: var(--goa-space-s) var(--goa-space-m);
+  text-decoration: none;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* ============================================
+   Responsive Utilities
+   ============================================ */
+
+.hide-mobile {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .hide-mobile {
+    display: block;
+  }
+
+  .hide-desktop {
+    display: none;
+  }
+}
+
+/* ============================================
+   Custom Scrollbar (optional)
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--goa-color-greyscale-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--goa-color-greyscale-400);
+  border-radius: var(--goa-border-radius-s);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--goa-color-greyscale-600);
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+
+@media print {
+  body {
+    background: white;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+}
