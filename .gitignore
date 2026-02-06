@@ -5,6 +5,13 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Deployment configs
+render.yaml
 
 # Build outputs
 dist/
