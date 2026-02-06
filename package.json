@@ -1,0 +1,42 @@
+{
+  "name": "goa-app-template",
+  "version": "1.0.0",
+  "description": "Government of Alberta application template with Node.js backend and Vue.js frontend",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "npm run dev --workspace=backend",
+    "dev:frontend": "npm run dev --workspace=frontend",
+    "build": "npm run build --workspace=frontend",
+    "build:backend": "npm run build --workspace=backend",
+    "build:frontend": "npm run build --workspace=frontend",
+    "start": "npm run start --workspace=backend",
+    "lint": "npm run lint --workspaces",
+    "test": "npm run test --workspaces"
+  },
+  "keywords": [
+    "government-of-alberta",
+    "goa",
+    "design-system",
+    "vue",
+    "node",
+    "express"
+  ],
+  "author": "Government of Alberta",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "mammoth": "^1.11.0",
+    "pdf-parse": "^2.4.5",
+    "pdf2json": "^4.0.2",
+    "xlsx": "^0.18.5"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}
