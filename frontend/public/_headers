@@ -1,0 +1,7 @@
+/*
+  # Disable CSP or configure it properly
+  X-Content-Security-Policy: ""
+  Content-Security-Policy: ""
+
+  # Or use a permissive CSP that allows your backend
+  # Content-Security-Policy: default-src 'self'; connect-src 'self' https://dev-grant-661d1c56-service-z4tx.onrender.com; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:;
